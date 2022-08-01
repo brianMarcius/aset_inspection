@@ -40,6 +40,12 @@ function store(){
     $user_name = $_POST['username'];
     $os = $_POST['os'];
 
+    $os_condition = 1;
+    //jika os other maka tidak layak
+    if ($os == 3) {
+        $os_condition = 0;
+    }
+
     //cek domain apakah on atau tidak
     $domain = isset($_POST['domain']) ? 1 : 0;
 
@@ -77,7 +83,7 @@ function store(){
     }
 
     $query_input = mysqli_query($connect,"INSERT into inspections(user_name, bios, os, join_domain, av, bios_condition, os_condition, join_domain_condition, av_condition, result) 
-                                                values('$user_name',$bios,$os,$domain,'$av_implode',$bios,1,$domain,$av_condition,$result)");
+                                                values('$user_name',$bios,$os,$domain,'$av_implode',$bios,$os_condition,$domain,$av_condition,$result)");
 
 
 
