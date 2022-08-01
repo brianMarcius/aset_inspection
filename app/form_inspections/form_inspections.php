@@ -103,7 +103,7 @@ function get_all_inspection(){
         if ($r['av'] != '') {
             $av_explode = explode(',',$r['av']);
             for ($i=0; $i < sizeof($av_explode) ; $i++) { 
-                $get_av_name = mysqli_fetch_array(mysqli_query($connect, "SELECT * from anti_virus where id='".$r['av']."'"));
+                $get_av_name = mysqli_fetch_array(mysqli_query($connect, "SELECT * from anti_virus where id='".$av_explode[$i]."'"));
                 $and = "";
                 if ($i > 0) {
                     $and = " dan ";
