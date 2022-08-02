@@ -78,7 +78,7 @@ function store(){
     //menghitung result
     $result = 1;
     //ketika domain = 0, bios = 0, av = 0 maka result tidak layak
-    if ($domain == 0 && $bios == 0 && $av_condition == 0) {
+    if (($domain == 0 && $bios == 0 && $av_condition == 0) || $os_condition == 0) {
         $result = 0;
     }
 
